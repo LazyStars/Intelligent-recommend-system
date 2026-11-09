@@ -1,0 +1,30 @@
+{
+  "name": "QWindowKit",
+  "version": "1.5.1",
+  "source": "https://github.com/stdware/qwindowkit.git",
+  "commit": "5626b3ae5f22508d77361495f589abedb39c2ee4",
+  "license": "Apache-2.0",
+  "build": {
+    "qt": "6.8.3",
+    "compiler": "MSVC 19.50.35728.0 (toolset 14.50.35717)",
+    "architecture": "x64",
+    "linkage": "shared",
+    "modules": [
+      "Core",
+      "Widgets",
+      "Quick"
+    ]
+  },
+  "artifacts": {
+    "Debug": {
+      "file": "artifacts/qwindowkit-1.5.1-qt6.8.3-msvc-x64-debug.zip",
+      "sha256": "e778df7e8ac774b9f8e88b1c35313b6ffa4d6cf6edbc7a93b9151909a6a8071a",
+      "installPath": "debug/qwindowkit"
+    },
+    "Release": {
+      "file": "artifacts/qwindowkit-1.5.1-qt6.8.3-msvc-x64-release.zip",
+      "sha256": "11c3ded8fff2b56d6ade5dee2bef0a3d82e080dd3447a6cb580d45bc7cfff214",
+      "installPath": "release/qwindowkit"
+    }
+  }
+}

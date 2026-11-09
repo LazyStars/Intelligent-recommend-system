@@ -1,0 +1,23 @@
+QWindowKit 1.5.1
+Source: https://github.com/stdware/qwindowkit
+Commit: 5626b3ae5f22508d77361495f589abedb39c2ee4
+Commit date: 2026-10-12
+
+Build environment:
+- Qt 6.8.3, MSVC 2022 x64 kit
+- MSVC 19.50.35728.0, x64
+- Shared libraries
+- Core, Widgets, and Quick modules
+- Debug and Release configurations
+- Debug linker PDB files included in debug/qwindowkit/bin
+
+Install prefixes:
+- debug/qwindowkit
+- release/qwindowkit
+
+Git-managed release artifacts:
+- artifacts/qwindowkit-1.5.1-qt6.8.3-msvc-x64-debug.zip
+- artifacts/qwindowkit-1.5.1-qt6.8.3-msvc-x64-release.zip
+
+The installed prefixes are generated locally by scripts/Prepare-QWindowKit.ps1.
+Artifact checksums are stored in qwindowkit-manifest.json.
