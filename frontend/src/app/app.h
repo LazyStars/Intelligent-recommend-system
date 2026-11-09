@@ -9,6 +9,9 @@ class App : public QWidget
 public:
     explicit App(QWidget* parent = nullptr);
 
+private slots:
+    void toggleMaximized();
+
 private:
     Ui::App ui;
 };
