@@ -42,6 +42,19 @@ qt_add_executable(${PROJECT_NAME}
 
     src/app/app.cpp
     src/app/app.h
+    src/app/app.ui
+
+    src/auth/steamauthapi.cpp
+    src/auth/steamauthapi.h
+    src/auth/steamauthprotocol.h
+
+    src/core/apiclient.cpp
+    src/core/apiclient.h
+    src/core/apierror.h
+
+    src/dialogs/generalpopup/generalpopup.h
+    src/dialogs/generalpopup/generalpopup.cpp
+    src/dialogs/generalpopup/generalpopup.ui
 )
 
 target_include_directories(${PROJECT_NAME}
