@@ -13,6 +13,7 @@ enum class ApiErrorKind
     Timeout,            // 超时
     Tls,                // 加密错误
     Http,               // 服务器错误
+    ResponseTooLarge,   // 响应过大（后端异常或恶意响应）
     InvalidJson,        // 无效Json
     InvalidPayload,     // 无效载荷（传输用户数据错误）
     Cancelled,          // 取消

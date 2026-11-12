@@ -4,6 +4,7 @@
 #include <qnetworkrequest.h>
 #include <qnetworkreply.h>
 
+class ApiJsonReply;
 class ApiClient final : public QObject
 {
     Q_OBJECT
@@ -12,8 +13,8 @@ class ApiClient final : public QObject
 public:
     explicit ApiClient(QUrl baseUrl, QObject *parent = nullptr);
     const QUrl &baseUrl() const noexcept;
-    QNetworkReply *getJson(const QString &relativePath);
-    QNetworkReply *postJson(const QString &relativePath, const QJsonObject &body);
+    ApiJsonReply *getJson(const QString &relativePath);
+    ApiJsonReply *postJson(const QString &relativePath, const QJsonObject &body);
 
     bool isConfigured() const;
     const QString &configurationError() const noexcept;

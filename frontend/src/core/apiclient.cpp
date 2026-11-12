@@ -8,6 +8,8 @@
 #include <utility>
 #include <qjsondocument.h>
 
+#include "apijsonreply.h"
+
 ApiClient::ApiClient(QUrl baseUrl, QObject* parent)
     : QObject(parent)
     , m_baseUrl(std::move(baseUrl))
@@ -41,14 +43,15 @@ const QUrl& ApiClient::baseUrl() const noexcept
     return m_baseUrl;
 }
 
-QNetworkReply* ApiClient::getJson(const QString& relativePath)
+ApiJsonReply* ApiClient::getJson(const QString& relativePath)
 {
     const auto url = resolveUrl(relativePath);
     if (url.isEmpty()) return nullptr;
-    return m_networkManager.get(createJsonRequest(url));
+    auto test = ApiJsonReply(m_networkManager.get(createJsonRequest(url)));
+    return &test;
 }
 
-QNetworkReply* ApiClient::postJson(const QString& relativePath, const QJsonObject& body)
+ApiJsonReply* ApiClient::postJson(const QString& relativePath, const QJsonObject& body)
 {
     const auto url = resolveUrl(relativePath);
     if (url.isEmpty()) return nullptr;

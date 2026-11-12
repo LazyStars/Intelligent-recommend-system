@@ -51,10 +51,11 @@ qt_add_executable(${PROJECT_NAME}
     src/core/apiclient.cpp
     src/core/apiclient.h
     src/core/apierror.h
+    src/core/apijsonreply.h
+    src/core/apijsonreply.cpp
 
     src/dialogs/generalpopup/generalpopup.h
     src/dialogs/generalpopup/generalpopup.cpp
-    src/dialogs/generalpopup/generalpopup.ui
 )
 
 target_include_directories(${PROJECT_NAME}
