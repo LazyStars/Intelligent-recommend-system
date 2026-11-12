@@ -2,6 +2,7 @@
 
 #include <qobject.h>
 #include <qnetworkrequest.h>
+#include <qnetworkreply.h>
 
 class ApiClient final : public QObject
 {
@@ -10,11 +11,18 @@ class ApiClient final : public QObject
 
 public:
     explicit ApiClient(QUrl baseUrl, QObject *parent = nullptr);
-
     const QUrl &baseUrl() const noexcept;
+    QNetworkReply *getJson(const QString &relativePath);
+    QNetworkReply *postJson(const QString &relativePath, const QJsonObject &body);
+
+    bool isConfigured() const;
+    const QString &configurationError() const noexcept;
 
 private:
-    QNetworkRequest createJsonRequest();
+    QUrl resolveUrl(const QString& url) const;
+    QNetworkRequest createJsonRequest(const QUrl &url) const;
 
+    QNetworkAccessManager m_networkManager;
     QUrl m_baseUrl;
+    QString m_configurationError;
 };
